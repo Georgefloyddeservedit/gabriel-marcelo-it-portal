@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Gabriel Marcelo IT Services</title>
+    <meta name="description" content="Professional IT Services by Gabriel Marcelo" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Top Info Bar -->
+      <div class="info-bar">
+        <div class="container">
+          <div class="contact-info">
+            <div class="info-item">
+              <i class="icon-mail"></i>
+              <span>info@gabrielmarcelo.com</span>
+            </div>
+            <div class="info-item">
+              <i class="icon-phone"></i>
+              <span>(123) 456-7890</span>
+            </div>
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="icon-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="icon-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <header class="header">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-name">Gabriel Marcelo</span>
+              <span class="logo-tagline">IT Services</span>
+            </a>
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html"><i class="icon-home"></i> Home</a></li>
+              <li class="active"><a href="profile.html"><i class="icon-user"></i> Profile</a></li>
+              <li><a href="services.html"><i class="icon-laptop"></i> Services</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <!-- Profile Section -->
+        <section class="profile-section">
+          <div class="container">
+            <h1>Professional Profile</h1>
+            <div class="profile-content">
+              <div class="profile-image-container">
+                <div class="profile-image">
+                  <img id="profile-preview" src="images/gabriel-profile.jpg" alt="Gabriel Marcelo" onerror="this.src='images/placeholder.jpg'">
+                </div>
+                <div class="profile-upload">
+                  <form action="upload.php" method="post" enctype="multipart/form-data" id="upload-form">
+                    <label for="profile-image-input" class="upload-button">
+                      <i class="icon-camera"></i>
+                    </label>
+                    <input type="file" id="profile-image-input" name="profile_image" accept="image/*" style="display: none;">
+                  </form>
+                </div>
+              </div>
+              <div class="profile-details">
+                <h2>Gabriel Marcelo</h2>
+                <p class="profile-subtitle">IT Professional & Consultant</p>
+                
+                <div class="profile-bio">
+                  <p>With over 15 years of experience in the IT industry, Gabriel has helped numerous businesses optimize their technology infrastructure and improve their cybersecurity posture.</p>
+                  <p>Gabriel holds multiple certifications including CISSP, CompTIA Security+, and is a Microsoft Certified Solutions Expert. His expertise spans network design, cybersecurity, cloud migration, and IT strategy development.</p>
+                  <p>Based in San Francisco, Gabriel works with clients across the United States, providing customized IT solutions that align with business objectives and drive technological innovation.</p>
+                </div>
+                
+                <div class="profile-contact">
+                  <h3>Contact Information</h3>
+                  <ul>
+                    <li><i class="icon-mail"></i> gabriel@gabrielmarcelo.com</li>
+                    <li><i class="icon-phone"></i> (123) 456-7890</li>
+                    <li><i class="icon-linkedin"></i> linkedin.com/in/gabrielmarcelo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <i class="icon-laptop"></i>
+              <span>Gabriel Marcelo IT Services</span>
+            </div>
+            <p class="copyright">
+              © <script>document.write(new Date().getFullYear())</script> Gabriel Marcelo IT Services. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script>
+      // Simple preview for uploaded image
+      document.getElementById('profile-image-input').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            document.getElementById('profile-preview').src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+          
+          // Auto-submit form when file is selected
+          document.getElementById('upload-form').submit();
+        }
+      });
+    </script>
+  </body>
+</html>
